@@ -1,0 +1,41 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'admin index.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="add_staff#about">
+  <table width="270" border="1">
+    <tr>
+      <td width="22">Staff name </td>
+      <td width="22">Place</td>
+      <td width="22">Post</td>
+      <td width="22">Pin</td>
+      <td width="22">Phone no </td>
+      <td width="22">Email</td>
+      <td width="8">&nbsp;</td>
+    </tr>
+    {% for i in val%}
+    <tr>
+      <td height="43">{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <td>{{i[4]}}</td>
+
+      <td> {{i[5]}}</td>
+      <td>&nbsp;{{i[6]}}</td>
+      <td>&nbsp;{{i[7]}}</td>
+
+      <td><p><a href="/staff_update?id={{i[1]}}">Edit</a></p>
+      <p><a href="/staff_delete?id={{i[1]}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <input type="submit" name="Submit" value="Add" />
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
