@@ -62,5 +62,5 @@ def predict(fn):
     print(p[0])
     return p[0]
 
-#predict(r"C:\new project\public complaint\src\static\dataset\w\water3.jpg")
-# traing()
+# predict(r"file:///D:/public_complaint/public%20complaint/public%20complaint/src/static/dataset/e/images (8).jpg")
+# traing ()
