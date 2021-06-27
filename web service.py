@@ -2,6 +2,7 @@ from flask import *
 import pymysql
 from werkzeug.utils import secure_filename
 from src.svm import predict
+from src.newcnn import predictcnn
 
 from src.detect import detect_dept
 app = Flask(__name__)
@@ -56,7 +57,8 @@ def complaint():
 
     complaint.save('D:\\public_complaint\\public complaint\\public complaint\\src\\static\\complaints\\'+fname)
     # res=predict('D:\\public_complaint\\public complaint\\public complaint\\src\\static\\complaints\\'+fname)
-    res=detect_dept('D:\\public_complaint\\public complaint\\public complaint\\src\\static\\complaints\\'+fname)
+    # res=detect_dept('D:\\public_complaint\\public complaint\\public complaint\\src\\static\\complaints\\'+fname)
+    res = predictcnn('D:\\public_complaint\\public complaint\\public complaint\\src\\static\\complaints\\' + fname)
     print("res",res)
     dept="0"
     if res==0:
